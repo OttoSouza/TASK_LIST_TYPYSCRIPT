@@ -1,0 +1,195 @@
+import { shade } from "polished";
+import styled from "styled-components";
+
+export const Container = styled.div``;
+export const Header = styled.div`
+  padding: 32px 0;
+  background: #28262e;
+`;
+export const HeaderContent = styled.div`
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-left: auto;
+    background: transparent;
+    border: 0;
+    svg {
+      color: #999591;
+      height: 24px;
+      width: 24px;
+    }
+  }
+`;
+export const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 24px;
+  span {
+    color: #f4ede8;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ff9000;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`;
+
+export const Content = styled.main`
+  max-width: 1120px;
+  margin: 64px auto;
+  display: flex;
+`;
+
+export const Schedule = styled.div`
+  flex: 1;
+  margin-right: 120px;
+
+  > p {
+    margin-top: 8px;
+    span {
+      color: #ff9000;
+    }
+    span + span {
+      margin: 0 4px;
+    }
+  }
+`;
+
+export const Section = styled.section`
+  margin-top: 48px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #3e3b47;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    > strong {
+      color: #999591;
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
+  > div + div {
+    border: 0;
+  }
+`;
+
+export const ShowTask = styled.div`
+  display: flex;
+  align-items: center;
+
+  > span {
+    display: flex;
+    align-items: center;
+    color: #f4ede8;
+    margin-left: auto;
+    width: 100px;
+    svg {
+      color: #ff9000;
+      margin-right: 8px;
+    }
+  }
+  & + div {
+    margin-top: 16px;
+  }
+  div {
+    flex: 1;
+    background: #3e3b47;
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    border-radius: 10px;
+    margin-left: 24px;
+
+    > strong {
+      color: #fff;
+      margin: 0 24px;
+      font-size: 20px;
+      width: 100px;
+    }
+    > span {
+      color: #fff;
+      margin-right: 88px;
+      font-size: 16px;
+      width: 100px;
+    }
+    > svg {
+      margin-right: 8px;
+    }
+
+    button {
+      background: transparent;
+      border: 0;
+      svg {
+        color: #fff;
+      }
+    }
+  }
+`;
+
+export const NoTask = styled.div`
+  display: flex;
+  align-items: center;
+  span {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    color: #ff9000;
+  }
+`;
+
+export const Calendar = styled.div`
+  width: 300px;
+
+  .DayPicker {
+    background: #28262e;
+    border-radius: 10px;
+  }
+  .DayPicker-wrapper {
+    padding-bottom: 0;
+  }
+  .DayPicker,
+  .DayPicker-Month {
+    width: 100%;
+  }
+  .DayPicker-Month {
+    border-collapse: separate;
+    border-spacing: 8px;
+    margin: 16px;
+  }
+  .DayPicker-Day {
+    width: 32px;
+    height: 32px;
+  }
+  .DayPicker-Day--available:not(.DayPicker-Day--outside) {
+    background: #3e3b47;
+    border-radius: 10px;
+    color: #fff;
+  }
+  .DayPicker:not(.DayPicker--interactionDisabled)
+    .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+    background: ${shade(0.2, "#3e3b47")};
+  }
+  .DayPicker-Day--today {
+    font-weight: normal;
+  }
+  .DayPicker-Day--disabled {
+    color: #666360 !important;
+    background: transparent !important;
+  }
+  .DayPicker-Day--selected {
+    background: #ff9000 !important;
+    border-radius: 10px;
+    color: #232129 !important;
+  }
+`;
